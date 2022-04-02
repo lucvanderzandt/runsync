@@ -1,7 +1,6 @@
-import 'package:runsyc/data/database.dart';
-import 'package:runsyc/data/repository/base_mock_service.dart';
-
+import '../../data/database.dart';
 import '../../data/entity/schedule.dart';
+import '../../data/repository/base_mock_service.dart';
 
 abstract class ScheduleService extends BaseMockService {
   ScheduleService({required Database database}) : super(database: database);

@@ -1,10 +1,4 @@
 class Notification {
-  final String id;
-  final String title;
-  final String body;
-  final DateTime createdAt;
-  DateTime? updatedAt;
-
   Notification({
     required this.id,
     required this.title,
@@ -12,4 +6,10 @@ class Notification {
     required this.createdAt,
     this.updatedAt,
   });
+
+  final String id;
+  final String title;
+  final String body;
+  final DateTime createdAt;
+  DateTime? updatedAt;
 }

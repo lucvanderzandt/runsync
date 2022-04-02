@@ -1,6 +1,5 @@
-import 'package:runsyc/data/database.dart';
-
 import '../../domain/repository/notification_service.dart';
+import '../database.dart';
 import '../entity/notification.dart';
 
 class NotificationServiceImpl extends NotificationService {

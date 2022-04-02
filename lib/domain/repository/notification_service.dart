@@ -1,7 +1,6 @@
-import 'package:runsyc/data/database.dart';
-import 'package:runsyc/data/repository/base_mock_service.dart';
-
+import '../../data/database.dart';
 import '../../data/entity/notification.dart';
+import '../../data/repository/base_mock_service.dart';
 
 abstract class NotificationService extends BaseMockService {
   NotificationService({required Database database}) : super(database: database);

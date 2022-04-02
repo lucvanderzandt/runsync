@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:runsyc/app/colors.dart';
-
-import 'app/page/home_page.dart';
+import 'app/colors.dart';
+import 'app/page/layout_page.dart';
 
 void main() {
   runApp(const RunSync());
@@ -10,10 +9,8 @@ void main() {
 class RunSync extends StatelessWidget {
   const RunSync({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context) => MaterialApp(
       title: 'RunSync',
       theme: ThemeData(
         backgroundColor: RunSyncTheme.white,
@@ -23,7 +20,6 @@ class RunSync extends StatelessWidget {
           foregroundColor: RunSyncTheme.darkBlue,
         ),
       ),
-      home: const HomePage(title: 'RunSync - Home'),
+      home: const LayoutPage(),
     );
-  }
 }
