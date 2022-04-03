@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'app/colors.dart';
-import 'app/page/layout_page.dart';
+import 'package:get/get.dart';
+import 'src/app/colors.dart';
+import 'src/app/page/layout_page.dart';
+import 'src/data/data.dart';
 
 void main() {
-  runApp(const RunSync());
+  runApp(RunSync());
 }
 
 class RunSync extends StatelessWidget {
-  const RunSync({Key? key}) : super(key: key);
+  RunSync({Key? key}) : super(key: key) {
+    _injectServices();
+  }
 
   @override
   Widget build(BuildContext context) => MaterialApp(
@@ -22,4 +26,12 @@ class RunSync extends StatelessWidget {
       ),
       home: const LayoutPage(),
     );
+
+  void _injectServices() {
+    Get
+      ..put(sessionServiceFactory())
+      ..put(notificationServiceFactory())
+      ..put(scheduleServiceFactory())
+      ..put(fitbitActivityServiceFactory());
+  }
 }

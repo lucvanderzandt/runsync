@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(runsyc LANGUAGES CXX)
+project(runsync LANGUAGES CXX)
 
-set(BINARY_NAME "runsyc")
+set(BINARY_NAME "runsync")
 
 cmake_policy(SET CMP0063 NEW)
 

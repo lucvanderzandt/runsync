@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "runsyc" "\0"
+            VALUE "CompanyName", "com.luc" "\0"
+            VALUE "FileDescription", "runsync" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "runsyc" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "runsyc.exe" "\0"
-            VALUE "ProductName", "runsyc" "\0"
+            VALUE "InternalName", "runsync" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 com.luc. All rights reserved." "\0"
+            VALUE "OriginalFilename", "runsync.exe" "\0"
+            VALUE "ProductName", "runsync" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
