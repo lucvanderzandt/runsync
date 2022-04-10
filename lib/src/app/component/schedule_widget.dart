@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../data/entity/schedule_item.dart';
+import '../../domain/entity/schedule_item.dart';
 import '../../domain/repository/schedule_service.dart';
 import 'header_widget.dart';
 import 'schedule_item_widget.dart';

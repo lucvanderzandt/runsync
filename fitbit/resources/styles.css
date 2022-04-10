@@ -1,0 +1,24 @@
+.application-fill           { fill: #F1600D; }
+.foreground-fill            { fill: fb-white; }
+.background-fill            { fill: fb-black; }
+
+#button--start #text {
+  text-buffer: "START";
+}
+
+.defaultText {
+  font-size: 32;
+  font-family: System-Regular;
+  font-weight: regular;
+  text-length: 32;
+}
+
+.text {
+  width: 100%;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  fill: white;
+}

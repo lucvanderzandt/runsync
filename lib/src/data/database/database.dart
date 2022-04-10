@@ -1,10 +1,10 @@
 library data.database;
 
-import '../entity/notification.dart';
-import '../entity/schedule.dart';
-import '../entity/schedule_item.dart';
-import '../entity/session.dart';
-import '../entity/user.dart';
+import '../../domain/entity/notification.dart';
+import '../../domain/entity/schedule.dart';
+import '../../domain/entity/schedule_item.dart';
+import '../../domain/entity/session.dart';
+import '../../domain/entity/user.dart';
 import '_table.dart';
 
 part '_database.dart';

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../component/header_widget.dart';
 
 class ExercisePage extends StatefulWidget {
   const ExercisePage({Key? key}) : super(key: key);
@@ -10,9 +9,12 @@ class ExercisePage extends StatefulWidget {
 
 class _ExercisePageState extends State<ExercisePage> {
   @override
-  Widget build(BuildContext context) => Column(
-      children: const <Widget>[
-        Header(text: 'My Exercise'),
-      ],
-    );
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: const Center(child: Text('My exercise')),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+        body: Container(),
+      );
 }

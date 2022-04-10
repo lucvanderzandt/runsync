@@ -32,6 +32,7 @@ class RunSync extends StatelessWidget {
       ..put(sessionServiceFactory())
       ..put(notificationServiceFactory())
       ..put(scheduleServiceFactory())
+      ..put(userServiceFactory())
       ..put(fitbitActivityServiceFactory());
   }
 }

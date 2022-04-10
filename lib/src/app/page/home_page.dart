@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../colors.dart';
+import '../component/friends_widget.dart';
 import '../component/notifications_widget.dart';
 import '../component/schedule_widget.dart';
 
@@ -14,9 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Center(child: 
-            Text('RunSync')
-          ),
+          title: const Center(child: Text('RunSync')),
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
@@ -29,6 +28,8 @@ class _HomePageState extends State<HomePage> {
               NotificationsWidget(),
               SizedBox(height: 21),
               ScheduleWidget(),
+              SizedBox(height: 21),
+              FriendsWidget(),
             ],
           ),
         ),

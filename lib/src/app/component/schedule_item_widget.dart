@@ -2,7 +2,7 @@ import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../data/entity/user.dart';
+import '../../domain/entity/user.dart';
 import '../colors.dart';
 
 class ScheduleItemWidget extends StatelessWidget {

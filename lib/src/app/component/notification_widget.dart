@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' hide Notification;
 
-import '../../data/entity/notification.dart';
+import '../../domain/entity/notification.dart';
 import '../colors.dart';
 
 class NotificationWidget extends StatelessWidget {

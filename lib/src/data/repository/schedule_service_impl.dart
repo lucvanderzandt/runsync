@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 
+import '../../domain/entity/schedule.dart';
 import '../../domain/repository/schedule_service.dart';
 import '../../domain/repository/session_service.dart';
 import '../database/database.dart';
-import '../entity/schedule.dart';
 
 class ScheduleServiceImpl extends ScheduleService {
   ScheduleServiceImpl({required Database database}) : super(database: database);

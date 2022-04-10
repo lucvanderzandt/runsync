@@ -9,6 +9,8 @@ void populateUsers(Database database) {
         name: 'Bob',
         email: 'bob@test.com',
         avatar: 'assets/images/avatar.jpeg',
+        friends: ['2', '3'],
+        online: true,
       ),
     )
     ..put(
@@ -17,6 +19,7 @@ void populateUsers(Database database) {
         id: '2',
         name: 'Alice',
         email: 'alice@test.com',
+        friends: ['1'],
       ),
     )
     ..put(
@@ -25,6 +28,8 @@ void populateUsers(Database database) {
         id: '3',
         name: 'Sarah',
         email: 'sarah@test.com',
+        friends: ['1'],
+        online: true
       ),
     );
 }

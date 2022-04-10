@@ -1,0 +1,5 @@
+<svg>
+  <rect id="background" />
+  <text y="40%" x="10" id="relative-speed" text-length="50"></text>
+  <use id="button--start" href="#text-button" class="text-button bottom application-fill" />
+</svg>

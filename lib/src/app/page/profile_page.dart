@@ -17,15 +17,22 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   final SessionService _sessionService = Get.find<SessionService>();
+  final FitbitActivityTimeseriesDataManager
+      _fitbitActivityTimeseriesDataManager =
+      Get.find<FitbitActivityTimeseriesDataManager>();
   bool? authenticated;
+  List<FitbitActivityTimeseriesData>? stepsData;
 
   @override
   void initState() {
     super.initState();
-    Future.sync(FitbitConnector.isTokenValid).then((value) {
+    Future.sync(FitbitConnector.isTokenValid).then((value) async {
       setState(() {
         authenticated = value;
       });
+      if (authenticated == true) {
+        await _fetchActivityData();
+      }
     });
   }
 
@@ -77,17 +84,28 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(children: [
               authenticated == null
                   ? Container()
-                  : Row(
+                  : Column(
                       children: [
-                        authenticated!
-                            ? ElevatedButton(
-                                onPressed: _disconnectFromFitbit,
-                                child: const Text('Disconnect Fitbit'),
-                              )
-                            : ElevatedButton(
-                                onPressed: _connectToFitbit,
-                                child: const Text('Connect Fitbit'),
-                              )
+                        Row(
+                          children: [
+                            authenticated!
+                                ? ElevatedButton(
+                                    onPressed: _disconnectFromFitbit,
+                                    child: const Text('Disconnect Fitbit'),
+                                  )
+                                : ElevatedButton(
+                                    onPressed: _connectToFitbit,
+                                    child: const Text('Connect Fitbit'),
+                                  ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            stepsData == null ?
+                            Container() :
+                            Text('Today, you walked ${stepsData?[0].value?.toStringAsFixed(2)} km'),
+                          ],
+                        )
                       ],
                     )
             ]),
@@ -104,8 +122,9 @@ class _ProfilePageState extends State<ProfilePage> {
             clientSecret: Secrets.fitbitClientSecret,
             redirectUri: Secrets.fitbitRedirectUri,
             callbackUrlScheme: Secrets.fitbitCallbackScheme)
-        .then((_) {
+        .then((userId) {
       setState(() {
+        _sessionService.getSession().user?.fitbitUserId = userId;
         authenticated = true;
       });
     });
@@ -118,6 +137,20 @@ class _ProfilePageState extends State<ProfilePage> {
     ).then((_) {
       setState(() {
         authenticated = false;
+      });
+    });
+  }
+
+  Future<void> _fetchActivityData() async {
+    await _fitbitActivityTimeseriesDataManager
+        .fetch(FitbitActivityTimeseriesAPIURL.dayWithResource(
+      date: DateTime.now(),
+      userID: _sessionService.getSession().user!.fitbitUserId,
+      resource: _fitbitActivityTimeseriesDataManager.type,
+    ))
+        .then((value) {
+      setState(() {
+        stepsData = value as List<FitbitActivityTimeseriesData>;
       });
     });
   }

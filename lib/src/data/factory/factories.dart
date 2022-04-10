@@ -13,6 +13,9 @@ NotificationService notificationServiceFactory() =>
 ScheduleService scheduleServiceFactory() =>
     ScheduleServiceImpl(database: database);
 
+UserService userServiceFactory() =>
+    UserServiceImpl(database: database);
+
 FitbitActivityTimeseriesDataManager fitbitActivityServiceFactory() =>
     FitbitActivityTimeseriesDataManager(
       clientID: Secrets.fitbitClientId,

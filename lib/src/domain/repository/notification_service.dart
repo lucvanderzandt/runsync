@@ -1,5 +1,5 @@
 import '../../data/database/database.dart';
-import '../../data/entity/notification.dart';
+import '../../domain/entity/notification.dart';
 import '../../data/repository/base_mock_service.dart';
 
 abstract class NotificationService extends BaseMockService {

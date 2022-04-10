@@ -1,5 +1,5 @@
 import '../../data/database/database.dart';
-import '../../data/entity/schedule.dart';
+import '../../domain/entity/schedule.dart';
 import '../../data/repository/base_mock_service.dart';
 
 abstract class ScheduleService extends BaseMockService {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../component/header_widget.dart';
 
 class CommunityPage extends StatefulWidget {
   const CommunityPage({Key? key}) : super(key: key);
@@ -10,9 +9,12 @@ class CommunityPage extends StatefulWidget {
 
 class _CommunityPageState extends State<CommunityPage> {
   @override
-  Widget build(BuildContext context) => Column(
-      children: const <Widget>[
-        Header(text: 'Community'),
-      ],
-    );
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: const Center(child: Text('Community')),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+        body: Container(),
+      );
 }
